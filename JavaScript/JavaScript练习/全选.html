@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>全选</title>
+		<style>
+			.container {
+				margin: 0px auto;
+				width: 500px;
+			}
+		</style>
+		<script>
+			var elements = document.getElementsByName("items");
+			function selectAll() {
+				for(var i = 0; i < elements.length; i++) {
+					elements[i].checked = true;
+				}
+			}
+
+			function deselectAll() {
+				for(var i = 0; i < elements.length; i++) {
+					elements[i].checked = false;
+				}
+			}
+
+			function reverse() {
+				for(var i = 0; i < elements.length; i++) {
+					elements[i].checked =!(elements[i].checked);
+				}
+			}
+
+			function change() {
+				var check = document.getElementById("all");
+				if(check.checked == true) {
+					selectAll();
+				} else {
+					reverse();
+				}
+			}
+			window.onload=function(){
+				document.getElementById("submit").onclick=function(){
+					var result="";
+					for(var i = 0; i < elements.length; i++) {
+				if(elements[i].checked ==true) {
+					result+=elements[i].value+"\n";
+				}
+									}
+									alert(result);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action="/" method="post">
+			<div class="container">
+				<label>你爱好的运动是？</label><input type="checkbox" name="name" id="all" onchange="change()" />全选/反选
+				<p>
+					<input type="checkbox" name="items" value="足球" />足球
+					<input type="checkbox" name="items" value="篮球" />篮球
+					<input type="checkbox" name="items" value="排球" />排球
+					<input type="checkbox" name="items" value="台球" />台球
+				</p>
+				<p>
+					<input type="button" id="checkedAll" value="全选" onclick="selectAll()" />
+					<input type="button" id="checkedNo" value="全不选" onclick="deselectAll()" />
+					<!--this代表当前对象-->
+					<input type="button" id="checkRev" value="反选" onclick="reverse(this)" />
+					<input type="button" id="submit" value="提交" onclick="showInfo()" />
+				</p>
+			</div>
+		</form>
+	</body>
+
+</html>

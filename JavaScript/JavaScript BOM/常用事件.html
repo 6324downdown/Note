@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div1 {
+				width: 300px;
+				height: 300px;
+				margin: 0px auto;
+				border: #0000FF solid 0.125rem;
+			}
+		</style>
+		<script>
+			/*
+			 * 1.onload ：网页加载事件(加载DOM树结构 图像 css)
+			 * 2.onmouseover:鼠标移动到某个元素上面
+			 * 3.onclick:当用户单击某个对象的时候执行的操作
+			 * 4.onkeydown:键盘的按键事件
+			 * 5.onchange:内容发生变化触发的事件
+			 */
+			function changeText() {
+				document.getElementById("p1").innerText = "河北加油！";
+			}
+
+			function ini() {
+				document.getElementById("div1").style.backgroundColor = "#0000FF";
+			}
+
+			function out() {
+				document.getElementById("div1").style.backgroundColor = "#FF0000";
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p1" onclick="changeText();">山东</p>
+		<div id="div1" onmouseover="ini();" onmouseout="out();">
+
+		</div>
+	</body>
+</html>

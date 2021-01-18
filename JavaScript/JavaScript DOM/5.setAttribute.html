@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>setAttribute设置属性</title>
+		<!--
+        setAttribute方法允许我们用属性节点的值做修改。
+        与getAttribute一样，setAttribute也只能用于元素节点。
+        setAttribute()方法需要我们向它传递两个参数：obiect.setAttribute(attribute,value)
+       -->
+		<script>
+			//将title=hobby改为like
+			window.onload = function() {
+				document.getElementById("divHobby").onclick = function() {
+					document.getElementById("divHobby").setAttribute("title","like");
+alert("已修改！");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="divHobby" title="hobby">
+			<ul>
+				<li>游泳</li>
+				<li>上网</li>
+				<li>拳击</li>
+				<li>音乐</li>
+			</ul>
+			<button id="bthChange">更改属性</button>
+		</div>
+	</body>
+
+</html>

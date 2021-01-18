@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>变量</title>
+		<meta charset="utf-8" />
+		<!--
+    	变量是一种引用内存位置的容器，用于保存在执行脚本时可以更改的值。
+    	变量的命名：
+	  	 变量名必须以字母或下划线 (_) 开头
+  	  	变量名可以包含数字，但是不能以数字开头
+    	由于JavaScript区分大小写，所以可用的字母包括A到Z（大写）和a到z（小写）的字符
+    	不能使用JavaScript的关键字保留字
+
+    -->
+		<!--
+       	定义变量、初始化、赋值
+        1.定义变量
+                       关键字:var
+                       例:var num;
+                       也可以同时声明多个变量，各个变量之间用逗号隔开。
+        2.初始化变量
+                      在定义变量的时候，就给值 如：var num=1;
+        3.给变量赋值
+          (1)定义变量: var username;
+          (2)变量赋值: username="张三";
+    -->
+
+		<!--数据类型：
+    	1.number:
+    	2.boolean
+    	3.string
+    	4.underfine
+    	5.null
+    	6.object
+    	7.array
+    -->
+	</head>
+
+	<body>
+		<script>
+			//    	1.number:不区分整数型和浮点型
+			var num = 10;
+			document.write(typeof(num) + "<br/>");
+			num1 = .12;
+			document.write(typeof(num1) + "<br/>");
+
+			//  2.boolean
+			var b = false;
+			document.write(typeof b + "<br />");
+
+			//3.字符串型:unicode编码
+			var str = "fsdfsdfds";
+			document.write(typeof str + "<br />");
+
+			//4.underfine 当声明变量未初始化时，默认为undefined
+			var un;
+			document.write(typeof un + "<br />");
+
+			//5.null：声明为null的变量实际为object类型
+			/@* Undefine和null的区别：null用来表示object未定义，underfine表示number,boolean,string等类未赋值 */
+			var nu = null;
+			document.write(typeof nu + "<br />");
+			//6.object：js的类以键值对形式定义
+			var obj = {
+				name: "srsr",
+				age: 20
+			};
+			document.write(typeof obj + "<br />");
+			document.write(obj.name + "  " + obj.age + "<br />");
+
+			//string型
+			var message = "Hello World!"
+			document.write(typeof message + "<br />");
+			//7.array：数组属于object型
+			var arr = ["A", "B", "C"];
+			document.write(typeof arr + "<br />");
+			/@* for in循环中所遍历的其实是数组的下标(索引) */
+			for (var a in arr) {
+				document.write(arr[a] + "<br />")
+			}
+			//声明变量及初始化
+			var x = 3;
+			var y;
+			y = 5;
+			document.write(x + "<br />");
+			document.write(y + "<br />");
+			var sum = 0;
+			for (var i = 0; i < 101; i++) {
+				sum += i;
+			}
+			document.write("1+2+3+...+100="+sum + "<br />");
+			
+			var n0;
+			document.write(typeof n0 + "<br />");
+			var n1 = new Object;
+			document.write(typeof n1 + "<br />");
+		</script>
+	</body>
+
+</html>

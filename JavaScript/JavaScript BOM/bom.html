@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+			BOM:浏览器对象模型 JS操作浏览器
+			注意:由于window对象表示当前窗口对象,可以将对象省略。
+			常见方法：
+			1.alert(); 弹出对话框
+			2.confirm():询问确认的对话框(确定和取消按钮)
+			3.prompt():提示用户输入的对话框 返回用户输入的字符串
+			4.open():打开新的浏览器窗口 加载给定的URL地址
+			5.close():关闭浏览器窗口
+			常见的属性:
+			1.history:客户端访问过的URL信息(历史记录)
+			2.location:当前的URL信息
+        -->
+		<script>
+			function show1() {
+				//			1.alert(); 弹出对话框
+				window.alert("Hello!");
+				//			2.confirm():询问确认的对话框(确定和取消按钮)
+				confirm("");
+			}
+
+			function show2() {
+				//4.open():打开新的浏览器窗口 加载给定的URL地址
+				/@*open("url"，"窗口名称","窗口特征")*/
+				window.open("welcome.html", "欢迎！", "width=400,height=400");
+			}
+			//location实现页面跳转
+			function show3() {
+				//			2.location:当前的URL信息
+				window.location.href = "welcome.html";
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<button id="btn1" onclick="show1()">提交1</button>
+		<button id="btn2" onclick="show2()">提交2</button>
+		<button id="btn3" onclick="show3()">提交3</button>
+	</body>
+
+</html>

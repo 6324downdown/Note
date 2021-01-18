@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>removeChild删除节点</title>
+		<script>
+			//删除节点
+			/@*				1.通过父节点删除子节点*/
+
+			function remove() {
+
+				/@*4.获取要删除的*/
+				var child = document.getElementById("swim");
+				/@*5.得到child的直接父节点*/
+				var parent = child.parentNode;
+				/@*6.删除*/
+				parent.removeChild(child);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<p>喜欢的运动</p>
+			<ul id="sports">
+				<li id="swim">游泳</li>
+				<li>足球</li>
+				<li>篮球</li>
+				<li>拳击</li>
+			</ul>
+			<input type="button" name="name" value="删除节点" onclick="remove();" />
+		</div>
+	</body>
+
+</html>

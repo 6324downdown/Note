@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+		JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）
+		JSON 是轻量级的文本数据交换格式
+		JSON 是存储和交换文本信息的语法。类似 XML。
+		JSON 比 XML 更小、更快，更易解析。
+		JSON 独立于语言：JSON 使用 Javascript语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。 目前非常多的动态（PHP，JSP，.NET）编程语言都支持JSON。
+		JSON 具有自我描述性，更易理解
+		JSON 文本格式在语法上与创建 JavaScript 对象的代码相同。
+		由于这种相似性，无需解析器，JavaScript 程序能够使用内建的 eval() 函数，用 JSON 数据来生成原生的 JavaScript 对象。
+	-->
+		<!--
+		1.JSON 语法规则
+		     数据在名称/值对中
+                           数据由逗号分隔
+    	     大括号保存对象
+    	     中括号保存数组
+    	     因此，json既可以是对象，也可以是数组。
+		2.JSON 名称/值对
+		  JSON 数据的书写格式是：名称/值对。
+		      例:"name":"tom"  等价于 name="tom"
+		3.JSON 值
+		  JSON 值可以是：数字、字符串、逻辑值、数组、对象、null
+	4.要求：key必须使用双引号。
+	-->
+		<script>
+			var obj = {
+				"name": "tom",
+				"age": 22,
+				"aa": 11,
+				"bb": 3434,
+			};
+			//遍历
+			for(c in obj) {
+				document.writeln(c + ":" + obj[c] + "<br />")
+			}
+			
+			var obj1 = {
+				"name": "tom",
+				"age": 22,
+				"aa": 11,
+				"bb": 3434,
+				"cc": {
+					"name": "asdas",
+					"age": 1111
+				}
+			};
+			for(c in obj1) {
+				if(c=="cc"){
+					for(u in obj1.cc){
+										document.writeln(u + ":" + obj1.cc[u] + "<br />")
+
+					}
+				}else{
+									document.writeln(c + ":" + obj[c] + "<br />")
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>数组</title>
+		<script>
+			//1.声明一个数组
+			var scores = new Array();
+			//2.数组的长度
+			scores[0] = 233;
+			scores[1] = 233;
+			scores[2] = 233;
+			scores[3] = 233;
+			scores[4] = 233;
+			document.writeln("长度：" + scores.length + "<br />");
+			//3.可以同时声明数组并且同时指定元素的值
+			var scores3 = new Array(30, 5, 6, 7, 8, 8);
+			document.writeln(scores3 + "<br />");
+
+			//4.也可以使用简单的语法声明数组并赋值
+			var scores2 = [1, 2, 3, 4, 5];
+			document.writeln(scores2 + "<br />");
+			//5.声明数组,并且指定数组的长度
+			var scores1 = new Array(30);
+
+			//6.分离字符串
+			var strs = "4 y * 7 p"
+			document.writeln(strs.split(" ") + "<br />");
+
+
+			//7.字符串数组的排	序
+			//.按字母顺序进行排序
+			var strs = ["c", "e", "q", "b", "m"];
+			document.writeln(strs.sort() + "<br />");
+
+
+			//8.数组元素的添加 JavaScript提供了数组添加方法:push()
+			//添加元素
+			var a=strs.push("a");
+			//push返回值为新数组的长度
+			document.writeln(a + "<br />");		
+			document.writeln(strs + "<br />");
+
+			//9.数组元素的删除
+
+			//.从数组的尾部移除一个元素,返回值为移除的元素 pop()
+			document.writeln(strs + "<br />");
+			strs.pop();
+			document.writeln(strs + "<br />");
+			//获取数组元素的索引值
+			var index = strs.indexOf("b");
+			console.log(index);
+			//splice():用指定字符替换指定范围内的元素,如不指定字符,相当于取出指定范围内的元素.闭区间
+			strs.splice(index, 2);
+			document.writeln("替换后："+strs + "<br />");
+
+			//10.循环遍历数组
+			var names = new Array("张三", "李四", "王文", "asdas")
+			//11.for循环
+			for (var i = 0; i < names.length; i++) {
+				document.writeln(names[i] + "<br />");
+			}
+			//12.for in
+			for (var num in names) {
+				/@* 注意:Num遍历的不是names中的元素，而是各元素的下标(索引).*/
+				document.writeln(names[num] + "<br />");
+			}
+			document.writeln("<br />");
+			//13.对象数组
+			var car1 = {
+				brand: "audi",
+				color: "red",
+				price: 200
+			};
+			var car2 = {
+				brand: "BMW",
+				color: "white",
+				price: 500
+			};
+			var car3 = {
+				brand: "Benz",
+				color: "black",
+				price: 500,
+				msg: function() {
+					document.writeln(this.brand + " " + this.color + " " + this.price + "<br />");
+				}
+			};
+
+			var car = new Array(car1, car2, car3);
+			for (var num in car) {
+				document.writeln(car[num]["brand"] + "<br />" + car[num].color + "<br />" + car[num].price + "<br />");
+			}
+			car[2].msg();
+			//14.使用forEach
+			var emp = new Array("aa", "bb", "cc", "dd", "ee", "ff");
+			/* foreach各元素详解: */
+			/* 1.currentValue ：必须，每次遍历读取的元素 */
+			/* 2. index: 可选， 当前元素的索引值。 */
+			/* 3. arr: 可选， currentValue元素的数组对象 */
+			/* 4. thisValue： 可选， 默认为undefined. */
+			emp.forEach(function(value, index) {
+				document.writeln(value + " " + index);
+			});
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

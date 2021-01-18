@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+			JavaScript数据类型转换
+			1.转换为字符串类型
+			2.转换成数字型
+			3.转换成布尔类型
+		
+		-->
+
+		<script>
+			//1.转换为字符串类型 
+			var num = 1234;
+			//tostring()
+			var str = num.toString();
+			document.writeln(typeof str + "<br />");
+			//String方法
+			document.writeln(typeof String(num) + "<br />");
+			/@*		拼接字符串（隐式转化）*/
+			document.writeln(typeof(num + "") + "<br />");
+
+			//2.转换为数值类型
+			//取整:parseInt()
+			//取浮点:parseFloat()
+			var num2 = "12.3assdfs";
+			document.writeln(typeof parseInt(num2) + "  " + parseInt(num2) + "<br />");
+			document.writeln(typeof parseFloat(num2) + "  " + parseFloat(num2) + "<br />");
+			
+			var num1 = "dsrsdfs1.23fdggdfgdfg";
+			document.writeln(typeof parseInt(num1) + "<br />");
+			/@*parseInt、parseFloat：从左到右取数.当左右两侧都是字符串时，虽然typeof显示为number，但值为NaN，相当于不能转化.*/
+			document.writeln(typeof parseFloat(num1) + "  " + parseFloat(num1) + "<br />");
+
+
+			var num3 = "sdwrsfsdf123assdfs";
+			document.writeln(typeof parseInt(num3) + "  " + parseInt(num3) + "<br />");
+			var num4 = "dgsdfsdfsds111fdgdfgdfgdfg";
+			//isNaN()判断是否是整数.
+			document.writeln(typeof parseInt(num4) + "  " + parseInt(num4) + "  " + isNaN(parseInt(num4)) + "<br />");
+			var num5 = 123;
+			document.writeln(isNaN(num3) + "<br />");
+			var num5 = Number("dsfsdfdsfdsf");
+			document.writeln(num5 + "<br />");
+			document.writeln(typeof num5 + "<br />");
+			/@*Number（）强制将类型转化为number类，如能转化，有值；如不能转化为number,值为NaN,空格转化为0.*/
+			document.writeln(Number("sfdsfs") + "<br />");
+			document.writeln(Number("111") + "<br />");
+			document.writeln(Number(" ") + "<br />");
+
+			//3.转换为布尔类型
+			/@*布尔转化：有值为true,无值或null为false*/
+			document.writeln(Boolean(122) + "<br />");
+			document.writeln(Boolean("snu'l'ldwsdfsdf") + "<br />");
+			document.writeln(Boolean("") + "<br />");
+			document.writeln(Boolean("   ") + "<br />");
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

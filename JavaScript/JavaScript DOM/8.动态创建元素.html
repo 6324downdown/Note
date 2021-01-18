@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>动态创建元素</title>
+		<style>
+			#container {
+				margin: 0px auto;
+				width: 400px;
+			}
+		</style>
+		<!--1. 创建一个元素节点:
+	1). createElement(): 按照给定的标签名创建一个新的元素节点. 方法只有一个参数：被创建的元素节点的名字, 是一个字符串.   
+	方法的返回值：是一个指向新建节点的引用指针. 返回值是一个元素节点, 所以它的 nodeType 属性值等于 1.
+	新元素节点不会自动添加到文档里, 它只是一个存在于 JavaScript 上下文的对象.
+                         
+2. 创建一个文本节点:
+	1). createTextNode(): 创建一个包含着给定文本的新文本节点. 这个方法的返回值是一个指向新建文本节点引用指针. 
+	它是一个文本节点, 所以它的 nodeType 属性等于 3.
+	 方法只有一个参数：新建文本节点所包含的文本字符串. 新元素节点不会自动添加到文档里
+	                         
+3. 为元素节点添加子节点:
+	1). appendChild(): var reference = element.appendChild(newChild): 
+	给定子节点 newChild 将成为给定元素节点 element 的最后一个子节点.
+	                      方法的返回值是一个指向新增子节点的引用指针.		    
+	                       
+	
+4. 插入节点:
+	1). insertBefore(): 把一个给定节点插入到一个给定元素节点的给定子节点的前面
+  			var reference =  element.insertBefore(newNode,targetNode);
+         节点 newNode 将被插入到元素节点 element 中并出现在节点 targetNode 的前面. 节点 targetNode 必须是 
+         element 元素的一个子节点。	 
+    
+5 删除节点:
+	从一个给定元素里删除一个子节点
+格式：var reference = element.removeChild(node);
+返回值：返回值是一个指向已被删除的子节点的引用指针。
+注意：某个节点被 removeChild() 方法删除时，这个节点所包含的所有子节点将同时被删除。
+-->
+		<script>
+			//创建用户登录界面
+			function createTN() {
+				var container = document.getElementById("container");
+				//创建h1节点
+				var h1 = document.createElement("h1");
+				h1.style.color = "red";
+				//创建文本节点
+				var txt1 = document.createTextNode("用户登录");
+				//文本节点值偶家
+				h1.appendChild(txt1);
+				//放h1
+				container.append(h1);
+				var div1 = document.createElement("div");
+				var div2 = document.createElement("div");
+				var div3 = document.createElement("div");
+
+				/@* -------------------------------------------------------------------------- */
+				div1.setAttribute("id", "username");
+				div1.style.height = 50;
+				//添加账号的表单节点
+				var username = document.createTextNode("账号：");
+				div1.appendChild(username);
+				var txtUsername = document.createElement("input");
+				txtUsername.setAttribute("type", "text");
+				//把输入框填进div1
+				div1.appendChild(txtUsername);
+				/*				div放进去*/
+				container.appendChild(div1);
+
+				/@*---------------------------------------------------------------*/
+
+				div2.setAttribute("id", "pwd");
+				//添加密码的表单节点
+				var password = document.createTextNode("密码：");
+				div2.appendChild(password);
+				var txtPassword = document.createElement("input");
+				txtPassword.setAttribute("type", "text");
+				txtPassword.setAttribute("name", "pwd");
+
+				//把输入框填进div2
+				div2.appendChild(txtPassword);
+				/*				div2放进container*/
+				container.appendChild(div2);
+
+				/@*---------------------------------------------------------------*/
+				//创建div3
+				div3.setAttribute("id", "btn");
+				div3.style.height = 50;
+				//创建login
+				var login = document.createElement("input");
+				//设置login按钮的属性
+				login.setAttribute("type", "submit");
+				login.setAttribute("name", "login");
+				login.setAttribute("onclick", "javascript:alert('登录成功！')");
+				//把login按钮框填进div2
+				
+				div3.appendChild(login);
+				/*				div3放进container*/
+				
+				container.appendChild(div3);
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+
+		</div>
+		</div>
+		<input type="button" name="name" value="创建文本节点" onclick="createTN();" />
+	</body>
+
+</html>

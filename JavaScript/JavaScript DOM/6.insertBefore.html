@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>insertBefore</title>
+		<script>
+			//在sport之前插入<h3>insertBefore方法</h3>
+			function create() {
+				/@*				1.创建元素节点*/
+				var par = document.createElement("h3");
+				/@*				2.创建文本节点*/
+				var txt = document.createTextNode("insertBefore");
+				/@*				2.将文本节点加到元素节点*/
+
+				par.appendChild(txt);
+				/@*4.获取id="sports"*/
+				var sport = document.getElementById("sports");
+				/@*5.得到ul的父节点*/
+				var parent = sport.parentNode;
+				/@*6.将h3元素添加到id=sports之前*/
+				parent.insertBefore(par, sport);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<p>喜欢的运动</p>
+			<ul id="sports">
+				<li>游泳</li>
+				<li>足球</li>
+				<li>篮球</li>
+				<li>拳击</li>
+			</ul>
+			<input type="button" name="name" value="insertBefore" onclick="create();" />
+		</div>
+	</body>
+
+</html>
