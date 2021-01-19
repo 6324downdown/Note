@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("btnSubmit").onclick = function() {
+					var reg = /abc/;
+					var flag = reg.test(userName);
+					if(flag) {
+						name.innerText = "y";
+					} else {
+						name.innerText = "N";
+
+					}
+				}
+
+			}
+			// 验证手机号
+			function test2() {
+				var phone = document.getElementsByName("telphone")[0].value;
+				var sphone = document.getElementById("sphone");
+				// 指定规则
+				var reg = /^1[3456789]\d{9}$/;
+				if(reg.test(phone)) {
+					sphone.innerHTML = "<strong style='color:green'>验证通过</strong>";
+				} else {
+					sphone.innerHTML = "<strong style='color:red'>验证失败</strong>";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" name="userName" id="userName" value="" /><span id="name"></span>
+		<input type="submit" name="btnSubmit" id="btnSubmit" value="提交" />
+		<input type="text" name="telphone" /><span id="sphone"></span>
+		<button onclick="test2();">测试手机号</button>
+		</span>
+	</body>
+
+</html>

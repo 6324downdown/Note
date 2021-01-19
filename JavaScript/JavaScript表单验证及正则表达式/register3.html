@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户注册</title>
+    <link rel="stylesheet" href="register.css" />
+	   <!--
+        1.概念
+  		  正则表达式，又称规则表达式。
+                       通常被用来检索、替换那些符合某个模式(规则)的文本。
+
+        2.用法:
+        var reg = /正则表达式/;
+        reg.test(str);
+
+        3.案例:
+        var pattern  = /规则/;
+        if(pattern.test(验证字符串)==true){
+               alert("符合要求！");
+               return true;
+        }else{
+               alert("格式非法！");
+               return false;
+        }
+         -->
+    <!--js校验表单后提交表单的三种方法总结
+        1.<input type=submit name="submit1" value="注册" onclick="return check(this.form)">
+        2.<form action="login" method="post" onsubmit="return check(this)">
+        3.input type=button name="submit1" value="登陆" onclick="check(this.form)">
+          form.submit();
+        -->
+        
+	<!-- var pattern = /^[a-zA-Z]{1}[a-zA-Z0-9]{5,19}$/; //验证用户名
+		 var pattern_pwd = /^[a-zA-Z0-9]{6,20}$/; //验证密码
+		 var pattern_email= /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; //验证邮箱
+		 var pattern_phone=/^[1-9]\d{10}$/; //验证手机号
+	-->
+	<script>
+		function checkAll(){
+			 var pattern = /^[a-zA-Z]{1}[a-zA-Z0-9]{5,19}$/; //验证用户名
+			 var pattern_pwd = /^[a-zA-Z0-9]{6,20}$/; //验证密码
+			 var pattern_email= /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; //验证邮箱
+		 	 var pattern_phone=/^[1-9]\d{10}$/; //验证手机号
+		 	 
+		 	 var userName = document.getElementById("userName");// 用户名
+		 	 var userPwd = document.getElementById("userPwd");// 密码
+		 	 var email = document.getElementById("email");// 邮箱
+		 	 var phone = document.getElementById("phone");// 手机号
+		 	 
+		 	 // 清空错误信息
+		 	 var error = document.getElementsByClassName("error");
+		 	 for (var i = 0; i < error.length; i++) {
+		 	 	error[i].innerText="";
+		 	 }
+		 	 
+		 	 // 判断用户名是否符合规则
+		 	 if(!pattern.test(userName.value.trim())){
+		 	 	// 显示错误信息,校验失败，阻止表单提交
+		 	 	document.getElementById("errorName").innerText="账号格式不正确!";
+		 	 	return false;
+		 	 }else if(!pattern_pwd.test(userPwd.value.trim())){
+		 	 	document.getElementById("errorPwd").innerText="密码格式不正确!";
+		 	 	return false;
+		 	 }else if(!pattern_email.test(email.value.trim())){
+		 	 	document.getElementById("errorEmail").innerText="邮箱格式不正确!";
+		 	 	return false;
+		 	 }else if(!pattern_phone.test(phone.value.trim())){
+		 	 	document.getElementById("errorPhone").innerText="手机号格式不正确!";
+		 	 	return false;
+		 	 }else{
+		 	 	// 提交表单
+		 	 	return true;
+		 	 }
+		 	 
+		}
+		
+		function validate(){
+			alert("校验失败!");
+			// 提交表单
+			// 通过表单名称 调用submit()；可以提交表单
+		}
+	</script>
+        
+</head>
+<body>
+    <div class="container">
+        <form name="form1" action="success.html" method="post" onsubmit="return checkAll();">
+            <fieldset>
+                <legend><strong>用户注册</strong></legend>
+                <div class="field">
+                    <label for="userName">账号:</label>
+                    <input type="text" name="username" id="userName" size="25" placeholder="字母开头数字或下划线，6-20位" maxlength="20" />
+                    <span class="error" id="errorName"></span>
+                </div>
+                <div class="field">
+                    <label for="userPwd">密码:</label>
+                    <input type="password" name="userpwd1" id="userPwd" size="25" value="" placeholder="请输入密码"
+                           maxlength="20" />
+                    <span class="error" id="errorPwd"></span>
+                </div>
+               
+                <div class="field">
+                    <label>性别:</label>
+                    <span style="display:inline-block;width:200px; text-align:left;">
+                        <input type="radio" checked="checked" name="gender" id="male" value="" />男
+                        <input type="radio" name="gender" id="female" value="" />女
+                    </span>
+                </div>
+              
+                <div class="field">
+                    <label for="email">常用邮箱:</label>
+                    <input type="email" name="email" size="25" id="email" placeholder="example@163.com"/>
+                    <span class="error" id="errorEmail"></span>
+                </div>
+                <div class="field">
+                    <label for="phone">手机号:</label>
+                    <input type="text" name="phone" id="phone" size="25" value="" placeholder="请输入11位手机号"/>
+                    <span class="error" id="errorPhone"></span>
+                </div>
+              
+                <div class="contorl">
+                    <input type="submit"  name="submit" id="btnSubmit" value="注册" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="reset" name="reset" id="btnReset" value="重置" />
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</body>
+</html>

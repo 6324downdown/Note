@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<!--
+        	作者：offline
+        	时间：2021-01-17
+        	描述：动态添加员工
+        -->
+		<style>
+			#empAdd {
+				width: 600px;
+				margin: 10px auto;
+				padding: 10px 0px;
+				text-align: center;
+			}
+			
+			#empAdd fieldset {
+				height: 100px;
+			}
+			
+			.btn {
+				margin-top: 5px;
+				width: 60px;
+			}
+			
+			.container {
+				margin: 20px auto;
+				width: 500px;
+				text-align: center;
+			}
+			
+			table {
+				width: 500px;
+			}
+			
+			table,
+			th,
+			td {
+				border: 1px solid #000000;
+				border-collapse: collapse;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var check = document.getElementById("all");
+				document.getElementById("btnAdd").onclick = function empAdd() {
+					var td2_text = document.createTextNode(document.getElementById("txtId").value);
+					var td3_text = document.createTextNode(document.getElementById("txtName").value);
+					var td4_text = document.createTextNode(document.getElementById("txtJob").value);
+					if(td2_text.nodeValue.match(/^[ ]*$/)) {
+						alert("编号不能为空！");
+						return false;
+					} else if(td3_text.nodeValue.match(/^[ ]*$/)) {
+						alert("姓名不能为空！");
+						return false;
+					} else if(td4_text.nodeValue == "0") {
+						alert("请选择有效的职位！");
+						return false;
+					} else {
+						var tr = document.createElement("tr");
+						var rows = document.getElementById("tbContent").rows.length;
+						var td = new Array();
+						var check = document.createElement("input");
+						var del = document.createElement("input");
+						tr.style.textAlign = "center";
+						tr.style.border = "solid";
+						//按行号设置整行背景色
+						if(rows % 2 != 0) {
+							tr.style.backgroundColor = "#FFFF00";
+						} else {
+							tr.style.backgroundColor = "#808080";
+						}
+						for(var i = 0; i < 5; i++) {
+							td[i] = document.createElement("td");
+						}
+						check.setAttribute("type", "checkbox");
+						check.setAttribute("class", "check");
+						del.setAttribute("type", "button");
+						del.setAttribute("value", "删除");
+						del.setAttribute("onclick", "deleteEmp(this)")
+						var tdContent = [check, td2_text, td3_text, td4_text, del];
+						for(var i = 0; i < 5; i++) {
+							td[i].appendChild(tdContent[i]);
+							tr.appendChild(td[i]);
+						}
+						document.getElementById("tbContent").appendChild(tr);
+					}
+				}
+				document.getElementById("btnReset").onclick = function resetEmp() {
+					document.getElementById("txtId").value = "";
+					document.getElementById("txtName").value = "";
+					document.getElementById("txtJob").value = "0";
+				}
+				document.getElementById("all").onchange = function selectAll() {
+					var tbody = document.getElementById("tbContent");
+					for(var i = 0; i < tbody.rows.length; i++) {
+						if(check.checked == true) {
+							tbody.childNodes[i].childNodes[0].childNodes[0].checked = true;
+						} else {
+							tbody.childNodes[i].childNodes[0].childNodes[0].checked = false;
+						}
+					}
+				}
+				document.getElementById("btnDelete").onclick = function deleteMany() {
+					var checkbox = document.getElementsByClassName("check");
+					var count = 0; // 存放被选中的数量
+					// 存放所有被选中的行（对象）
+					var arr = new Array();
+					for(var i = 0; i < checkbox.length; i++) {
+						// 判断被选中的项
+						if(checkbox[i].checked) {
+							count++;
+							// 将被选中的行信息添加到数组中
+							var tr = checkbox[i].parentNode.parentNode;
+							arr.push(tr);
+						}
+					}
+					if(count == 0) {
+						alert("请至少选中一项!");
+					} else {
+						// 执行相应的删除操作
+						if(confirm("确定要删除吗?")) {
+							// 得到父节点(tbody)
+							var tbody = document.getElementById("tbContent");
+							for(index in arr) {
+								tbody.removeChild(arr[index]);
+							}
+						}
+					}
+				}
+			}
+
+			function deleteEmp(obj) {
+				/@*用childNodes获取表体的所有行并重新排色，用两个parentNode获取删除按钮所在的行*/
+				if(!confirm("确定要删除吗?")) {
+					return false;
+				} else {
+					obj.parentNode.parentNode.remove();
+					var tbody = document.getElementById("tbContent");
+					var rows = tbody.childNodes;
+					for(var i = 0; i < tbody.rows.length; i++) {
+						if(i % 2 != 0) {
+							rows[i].style.backgroundColor = "#FFFF00";
+						} else {
+							rows[i].style.backgroundColor = "#808080";
+
+						}
+					}
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div id="empAdd">
+			<fieldset>
+				<legend><strong>添加员工</strong></legend>
+
+				<label>编号:</label>
+				<input type="text" size="15" id="txtId" name="empNo" value="" maxlength="4" autofocus="autofocus" placeholder="请输入员工编号" />
+				<label>姓名:</label>
+				<input type="text" size="15" id="txtName" name="empName" value="" maxlength="20" placeholder="请输入姓名" />
+				<label>职位:</label>
+				<select id="txtJob">
+					<option value="0" selected="selected">请选择</option>
+					<option value="程序员">程序员</option>
+					<option value="设计师">设计师</option>
+					<option value="项目经理">项目经理</option>
+				</select>
+				<br /><br />
+				<div>
+					<input type="submit" name="name" id="btnAdd" value="添加" />
+					<input type="reset" class="btn" id="btnReset" value="重置" />
+				</div>
+			</fieldset>
+		</div>
+		<div class="container">
+			<h1>员工管理</h1>
+			<table>
+				<thead>
+					<tr>
+						<th><input type="checkbox" name="selectAll" id="all" />全选</th>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>职位</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody id="tbContent"></tbody>
+			</table>
+			<p id="empty">
+			</p>
+			<input type="button" name="name" id="btnDelete" value="删除员工" />
+			<script>
+			</script>
+		</div>
+	</body>
+
+</html>
