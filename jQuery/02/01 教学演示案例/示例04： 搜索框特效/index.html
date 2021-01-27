@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+<title>搜索框特效</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+<script type="text/javascript">
+	/*
+	 
+	 * 1.focus()：鼠标点到当前元素时执行
+	 * 2.blur():鼠标点到其他元素，从当前元素上离开时执行
+	 * */
+	$(function () {
+		$("#searchtxt").focus(function  () {
+			//val():获取和设置value属性值，可能有多个
+			var txt_value=$(this).val();
+			//2.如果搜索到的值等于电风扇，清空
+			if(txt_value=="电风扇"){
+				$(this).val("");
+			}
+		})
+				$("#searchtxt").blur(function  () {
+			//val():获取和设置value属性值，可能有多个
+			var txt_value=$(this).val();
+			//2.如果搜索到的值等于电风扇，清空
+			if(txt_value!="电风扇"){
+				$(this).val("电风扇");
+			}
+		})
+	})
+</script>
+<style type="text/css" >
+*{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+input{
+	float: left;
+}
+#searchtxt{
+	width:222px;
+	height:38px;
+	line-height:38px;
+	padding-left:30px;
+	border:none;
+	background:  url(images/bg.jpg) no-repeat;
+}
+.search_btn{
+	width:90px;
+	height:38px;
+	line-height:38px; 
+	border:none;
+	background: url(images/btn.jpg) no-repeat;
+	margin-left:-4px;
+	cursor:pointer;
+}
+
+</style>
+
+</head>
+<body> 
+  <input name="" type="text" class="search_txt" value="电风扇" id="searchtxt" />
+  <input type="button" class="search_btn" />
+
+  <script  src="js/jquery-1.12.4.js" ></script>
+ 
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>DOM删除节点</title>
+		<!--
+        如果文档中某一个元素多余，那么应将其删除。
+        jQuery 提供了三种删除节点的方法，即remove(), detach()和empty()。
+        1.remove()方法从DOM 中删除所有匹配的元素，传入的参数用于根据jQuery 表达式来筛选元素。
+          当某个节点用remove（）方法删除后，该节点所包含的所有后代节点将同时被删除。
+          这个方法的返回值是一个指向己被删除的节点的引用，因此可以在以后再使用这些元素。
+        $("ul").remove();
+
+        2.empty()方法并不是删除节点，而是清空节点，它能清空元素中的所有后代节点。
+        -->
+		<script src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function() {
+				/*
+				 *remove，detach的是元素本身，empty的是后代节点的信息
+				 */
+				$("#btn1").click(function() {
+					//删除ID为p1的节点
+					//$("#p1").remove();
+					//删除URL中第二个li
+					//$("ul li:eq(1)").remove();
+					$("ul li:nth-child(2)").detach();
+
+				});
+				$("#btn2").click(function() {
+					//清空ul的最后一个li节点
+					//$("ul li:last-child").empty();
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<h3>DOM树</h3>
+		<p id="p1" title="水果">你喜欢的水果是？</p>
+		<ul style="list-style:square">
+			<li title="apple">苹果</li>
+			<li title="orange">桔子</li>
+			<li title="banana">香蕉</li>
+		</ul>
+
+		<button id="btn1">remove()方法</button>
+		<button id="btn2">empty()方法</button>
+	</body>
+
+</html>

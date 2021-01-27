@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入js文件-->
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//指定图标的配置和数据
+				var option = {
+					//标题
+					title: {
+						text: 'ECharts 数据统计'
+					},
+					//鼠标悬浮的提示内容
+					tooltip: {},
+					//图例
+					legend: {
+						data: ['用户来源']
+					},
+					//x轴
+					xAxis: {
+						data: ["Android", "IOS", "PC", "Ohter", "JavaScript"]
+					},
+					//y轴
+					yAxis: {
+
+					},
+					//数据
+					series: [{
+						name: '访问量',
+						type: 'bar', //line折线图 bar:柱状图 pie饼状图
+						data: [500, 200, 360, 100, 600] //可以在这里设置每条数据的名字和值，代替yAxis，xAxis的功能
+					}]
+				};
+				//初始化echarts实例
+				var myChart = echarts.init(document.getElementById('chartmain'));
+
+				//使用制定的配置项和数据显示图表
+				myChart.setOption(option);
+			})
+		</script>
+
+	</head>
+
+	<body>
+		<div id="chartmain" style="width:600px; height: 400px;"></div>
+	</body>
+
+</html>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>DOM插入节点</title>
+		<!--
+        在jQuery 中还提供了其他几种插入节点的方法：
+        1.append() 向每个匹配的元素内部追加内容
+
+        2.appendTo()将所有匹配的元素追加到指定的元素中。
+          实际上，使用该方法是颠倒了常规的$(A).appendto(B）的操作，
+          即不是将B 追加到A 中，而是将A 追加到B 中。
+
+        3.prepend() 向每个匹配的元素内部前置内容
+
+        4.prependTo() 将所有匹配的元素前置到指定的元素中。
+          实际上，使用该方法是颠倒了常规的 $(A).prependto(B）的操作，
+          即不是将B 前置到 A 中，而是将A 前置到B 中
+
+        5.after() 在每个匹配的元素之后插入内容
+
+        6.insertAfter() 将所有匹配的元素插入到指定元素的后面。
+          实际上，使用该方法是颠倒了常规的$(A).after(B）的操作，
+          即不是将B 插入到A后面，而是将A 插入到B 后面
+
+        7.before() 在每个匹配元素之前插入内容
+
+        8.insertBefore()将所有匹配的元素插入到指定的元素的前面，
+          实际上，使用该方法是颠倒了常规的$(A).before(B）的操作，
+          即不是将B 插入到A前面，而是将A 插入到B 前面
+
+        -->
+		<script src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function function_name() {
+				/*
+					 append()与appendto()实现的功能是一样的，但主语和宾语的位置不同
+					 功能：在最后插入子节点
+					 * */
+				$("#btn1").click(function() {
+					/*        		$(html):可以一次性创建元素节点,属性节点,文本节点
+					        		返回一个jQuery对象，以$开头*/
+					//1.创建一个li节点
+					var $li1 = $("<li title='菠萝'>菠萝</li>");
+					//2.把创建的节点插入
+					$("ul").append($li1);
+				});
+				$("#btn2").click(function() {
+					//1.创建一个li节点
+					var $li1 = $("<li title='草莓'>草莓</li>");
+					//2.把创建的节点插入
+					$li1.appendTo("ul");
+					/*
+					 prepend()与prependto()实现的功能是一样的，但主语和宾语的位置不同
+					 功能：在最前面插入子节点
+					 * */
+				});
+				/*prepend() 前置内容*/
+				$("#btn3").click(function() {
+					//1.创建一个li节点
+					var $li1 = $("<li title='洋芋'>洋芋</li>");
+					//2.把创建的节点插入
+					$("ul").prepend($li1);
+
+				});
+				$("#btn4").click(function() {
+					//1.创建一个li节点
+					var $li1 = $("<li title='洋芋'>洋芋</li>");
+					//2.把创建的节点插入
+					$li1.prependTo("ul");
+				});
+				/*
+				 after()insertAfter()实现的功能是一样的，但主语和宾语的位置不同
+				 功能：在指定元素后面插入，变成兄弟节点
+				 * */
+				$("#btn5").click(function() {
+					//在id位p1的元素后插入
+					$("#p1").after("<li title='洋芋'>洋芋0</li>");
+				});
+				$("#btn6").click(function() {
+					$("<li title='洋芋1'>洋芋1</li>").insertAfter("#p1");
+					/*
+					 before()insertBefore()实现的功能是一样的，但主语和宾语的位置不同
+					 功能：					 功能：在指定元素前面插入，变成兄弟节点
+
+					 * */
+				});
+				$("#btn7").click(function() {
+					$("#p1").before("<li title='洋芋'>洋芋2</li>");
+
+				});
+				$("#btn8").click(function() {
+					$("<li title='洋芋'>洋芋3</li>").insertBefore("#p1");
+
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<h3>DOM树</h3>
+		<p title="水果">你喜欢的水果是？</p>
+		<ul>
+			<li title="苹果">苹果</li>
+			<li title="桔子">桔子</li>
+			<li title="香蕉">香蕉</li>
+		</ul>
+		<div id="software">
+			<h4>开发语言</h4>
+			<p id="p1">C#</p>
+		</div>
+		<button id="btn1">append()方法</button>
+		<button id="btn2">appendTo()方法</button><br />
+		<button id="btn3">prepend()方法</button>
+		<button id="btn4">prependTo()方法</button><br />
+		<button id="btn5">after()方法</button>
+		<button id="btn6">insertAfter()方法</button><br />
+		<button id="btn7">before()方法</button>
+		<button id="btn8">insertBefore()方法</button><br />
+	</body>
+
+</html>

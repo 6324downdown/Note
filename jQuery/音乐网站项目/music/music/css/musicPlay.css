@@ -1,0 +1,143 @@
+.container .content {
+	margin: 30px 0px;
+	overflow: hidden;
+}
+
+.container .content .img {
+	width: 35%;
+	float: left;
+}
+
+.container .content .introduce {
+	width: 65%;
+	float: left;
+}
+
+.container .content h2 {
+	font-weight: 400;
+}
+
+.container .content p {
+	color: #888888;
+	font-size: 14px;
+}
+
+.container .content p>a {
+	text-decoration: none;
+	color: #888888;
+}
+
+.container .content p>a:hover {
+	color: #228B22;
+}
+
+.container .content p .span1 {
+	margin-left: 50px;
+}
+
+.container .content .button-price {
+	margin-top: 60px;
+	width: 150px;
+	height: 40px;
+	background-color: #3385FF;
+	line-height: 40px;
+	font-size: 18px;
+	border-radius: 5px;
+	transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-moz-transition: all 500ms;
+	-ms-transition: all 500ms;
+}
+
+.container .content .button-price:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.container .content .button-price a {
+	display: block;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+/*评论*/
+
+.comment .default {
+	margin-left: 42px;
+}
+
+.comment .hot span {
+	font-size: 12px;
+	color: #888888;
+	margin-left: 5px;
+}
+
+.comment form {
+	width: 80%;
+	height: 200px;
+}
+
+#c_hot {
+	width: 95%;
+	height: 100px;
+}
+
+.comment .c_btn {
+	margin-top: 20px;
+	width: 150px;
+	height: 40px;
+	background-color: dodgerblue;
+	line-height: 40px;
+	font-size: 16px;
+	border-radius: 5px;
+	float: right;
+}
+
+.container .comment .c_btn a {
+	display: block;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+.comment .cont {
+	width: 80%;
+	border-bottom: 1px solid #F3F3F3;
+	margin-top: 30px;
+}
+
+.comment .cont img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: left;
+}
+
+.comment .cont p {
+	font-size: 16px;
+	margin-left: 62px;
+}
+
+.comment .cont .p1 {
+	color: #888888;
+}
+
+.comment .more {
+	height: 36px;
+	background-color: #F3F3F3;
+	margin: 30px 30px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 36px;
+}
+
+.comment .more a {
+	color: #888888;
+	text-decoration: none;
+}

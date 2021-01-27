@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>节点遍历each()</title>
+
+		<style type="text/css">
+			.hot {
+				color: #F00;
+			}
+			
+			a {
+				color: #000;
+				text-decoration: none;
+			}
+			
+			.orange {
+				background: #c3910b;
+			}
+			
+			.orange a {
+				color: #ffffff;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			//相当于foreach，按索引挨个遍历，执行函数
+			$(function() {
+				$("li").each(function() {
+					var $li1 = $(this).find("a").text() + "<br/>";
+					$("p").append($li1);
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<section>
+			<img src="images/ad.jpg" alt="美梦成真系列抽奖" />
+			<ul>
+				<li>
+					<a href="#">小米的MI 2手机</a><span class="hot">火爆销售中</span></li>
+				<li>
+					<a href="#">苹果iPad mini</a>
+				</li>
+				<li>
+					<a href="#">三星GALAXY Ⅲ</a>
+				</li>
+				<li>
+					<a href="#">苹果iPhone 5</a>
+				</li>
+			</ul>
+			<p></p>
+		</section>
+	</body>
+
+</html>

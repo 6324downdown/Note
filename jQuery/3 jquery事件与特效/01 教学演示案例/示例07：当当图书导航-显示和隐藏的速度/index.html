@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>当当图书导航</title>
+		<link href="css/style.css" rel="stylesheet" />
+		<!--
+        show（）方法和hide（）方法是jQuery 中最基本的动画方法。
+        在HTML 文档里，为一个元素调用hide()方法，会将该元素的display 样式改为“none''。
+        当把元素隐藏后，可以使用show（）方法将元素的display 样式设置为先前的显示状态
+       （“block ”或“ inline ”或其他除了“none ”之外的值）。
+        
+        show（）方法和hide（）方法在不带任何参数的情况下，相当于css
+        （”display'',"none/ block/inline），
+        作用是立即隐藏或显示匹配的元素，不会有任何动画。
+        如果希望在调用show（）方法时，元素慢慢地显示出来，可以为show（）方法指定一个速度参数，
+        例如，指定一个速度关键字“ slow、normal、 fast”。应时间为0.6秒、0.4秒和0.2秒 
+        也可设置整数指定执行时间数字计数级别是毫秒 slow 、normal、 fast实际上相当于600、400、200的值，
+        用来设定整个显示/隐藏过程消耗多少毫秒。
+        如：("p").show(1000);该示例使p元素中1秒内显示完毕。也能添加回调事件函数。
+        -->
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".on").hover(function() {
+					$(".topDown").show("normal");
+				}, function() {
+					$(".topDown").hide("fast");
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="wrap">
+				<div class="top-l left">欢迎光临当当，请
+					<a href="" class="top-login">登录</a>
+					<a href="">免费注册</a>
+				</div>
+				<ul class="top-m right">
+					<li>
+						<a href=""><i class="top-car left"></i>购物车</a>
+					</li>
+					<li class="line"></li>
+					<li>
+						<a href="">我的订单</a>
+					</li>
+					<li class="line"></li>
+					<li>
+						<a href="">当当自出版</a>
+					</li>
+					<li class="line"></li>
+					<li>
+						<a href=""><i class="top-tel left"></i>手机当当</a>
+					</li>
+					<li class="line"></li>
+					<li class="on">
+						<a href="" class="menu-btn">我的当当</a>
+						<ul class="topDown">
+							<li>
+								<a href="">我的积分</a>
+							</li>
+							<li>
+								<a href="">我的收藏</a>
+							</li>
+							<li>
+								<a href="">我的余额</a>
+							</li>
+							<li>
+								<a href="">我的评论</a>
+							</li>
+							<li>
+								<a href="">电子书架</a>
+							</li>
+						</ul>
+					</li>
+					<li class="line"></li>
+					<li>
+						<a href="" class="menu-btn">企业采购</a>
+					</li>
+					<li class="line"></li>
+					<li>
+						<a href="" class="menu-btn">客户服务</a>
+					</li>
+					<li class="line"></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="wrap">
+			<a href=""><img src="images/logo.jpg" /></a>
+		</div>
+		<div class="nav-box">
+			<div class="wrap">
+				<ul class="nav-ul">
+					<li class="all">
+						<a href="">全部商品详细分类</a>
+					</li>
+					<li>
+						<a href="">尾品会</a>
+					</li>
+					<li>
+						<a href="">图书</a>
+					</li>
+					<li>
+						<a href="">电子书</a>
+					</li>
+					<li>
+						<a href="">服装</a>
+					</li>
+					<li>
+						<a href="">运动户外</a>
+					</li>
+					<li>
+						<a href="">婴孕童</a>
+					</li>
+					<li>
+						<a href="">家具</a>
+					</li>
+					<li>
+						<a href="">当当优品</a>
+					</li>
+					<li>
+						<a href="">电器城</a>
+					</li>
+					<li>
+						<a href="">当当超市</a>
+					</li>
+					<li>
+						<a href="">海外购</a>
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+			</div>
+		</div>
+
+	</body>
+
+</html>

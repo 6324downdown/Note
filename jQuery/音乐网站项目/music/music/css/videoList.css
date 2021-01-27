@@ -1,0 +1,104 @@
+section {
+	background-color: #E1E1E1;
+}
+
+.container {
+	margin-left: 50px;
+}
+
+h4.latest-text {
+	border-left: 5px solid #ff8d1b;
+	font-size: 26px;
+	color: #212121;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+
+.container .title {
+	font-size: 16px;
+	color: black;
+	border: 1px solid #888888;
+	height: 30px;
+	border-radius: 4px;
+	line-height: 30px;
+	margin-top: 30px;
+}
+
+.container .title li {
+	margin-left: 10px;
+}
+
+.container .title li span {
+	margin-left: 10px;
+}
+
+.container .video_list {
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+.container .video_list ul {
+	height: 320px;
+}
+
+.container .video_list ul li>a {
+	display: block;
+	width: 182px;
+	float: left;
+	margin-left: 5px;
+	background-color: white;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 12px;
+	color: #000000;
+}
+
+.container .video_list ul li p {
+	padding: 0px 5px 0px 5px;
+}
+
+.container .video_list ul li a span {
+	color: red;
+	font-weight: bold;
+	float: right;
+}
+
+.container .video_list ul li a:hover {
+	color: blue;
+	/*box-shadow: x轴 y轴 模糊值（可写可不写）阴影的延伸面积
+（可加可不加） 阴影颜色（可加可不加）;*/
+	box-shadow: 1px 1px 2px 4px white;
+}
+
+.container .page {
+	overflow: hidden;
+	width: 600px;
+	margin: 50px auto;
+}
+
+.container .page ul li>a {
+	display: block;
+	float: left;
+	border: 1px solid #000000;
+	width: 30px;
+	height: 30px;
+	margin-left: 20px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: black;
+}
+
+.container .page ul li a.frist,
+.container .page ul li a.last {
+	width: 70px;
+	background-color: #000000;
+	color: white;
+}
+
+.container .page ul li>a:hover {
+	background: #29292A;
+	color: #fff;
+	border: 1px solid #29292A;
+}

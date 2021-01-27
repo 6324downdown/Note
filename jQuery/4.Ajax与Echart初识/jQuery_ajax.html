@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script>
+			/*
+			 *jQuery调用ajax方法
+			 * 格式：$.ajax({})
+			 * 参数：
+			 *   1.type:请求方式get/post
+			 *   2.url：请求的地址
+			 *   3.data:发送给服务器的数据
+			 *   4.dataType：预期服务器返回的数据类型
+			 *   5.async:是否异步，默认为true
+			 *   6.contentType:设置请求头
+			 *   7.success:请求成功后调用的事件
+			 *   8.error:请求失败后调用的事件
+			 */
+			$(function() {
+				//给按钮绑定点击事件
+				$("#btn1").click(function() {
+					$.ajax({
+						type: "get",
+						url: "js/data.txt",
+						data: { /*请求发送的数据，json对象*/
+							username: "zhangsan"
+						},
+						//将返回的数据自动封装为json类型，前提是返回的格式必须是一个json格式数据
+						dataType: "json",
+						async: true,
+						//下面的data代表服务器响应过来的数据
+						success: function(data) {
+							//把字符串转成json
+							var dataObj = typeof res == 'string' ? JSON.parse(data) : data;
+							//console.log(dataObj);
+							var $ul = $("<ul></ul>");
+							//遍历数组
+							for(var i = 0; i < data.length; i++) {
+								var user=data[i];
+								var li = "<li>" + user.userName + "</li>";
+								$ul.append(li);
+							}
+							$("body").append($ul);
+						}
+					});
+				})
+				$.ajax({
+					type:"get",
+					url:"",
+					async:true
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<button id="btn1">提交</button>
+
+	</body>
+
+</html>

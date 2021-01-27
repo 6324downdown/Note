@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>get请求</title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+		<script>
+			/*
+			 *get(url，"请求参数列表"，"回调函数","预计服务器返回的数句形式")
+			 */
+			$(function() {
+				$("#btn1").click(function() {
+					$.get("js/json.txt",{},function (data) {
+						
+					},"json");
+				})
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

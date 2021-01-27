@@ -1,0 +1,98 @@
+/* 登录页面样式 */
+
+
+/* 动画定义 */
+
+@-webkit-keyframes animate-cloud {
+	/* Safari 和 Chrome 
+*/
+	from {
+		background-position: 600px 100%;
+	}
+	to {
+		background-position: 0 100%;
+	}
+}
+
+@-moz-keyframes animate-cloud {
+	/* Firefox */
+	from {
+		background-position: 600px 100%;
+	}
+	to {
+		background-position: 0 100%;
+	}
+}
+
+@-ms-keyframes animate-cloud {
+	from {
+		background-position: 600px 100%;
+	}
+	to {
+		background-position: 0 100%;
+	}
+}
+
+@-o-keyframes animate-cloud {
+	/* Opera */
+	from {
+		background-position: 600px 100%;
+	}
+	to {
+		background-position: 0 100%;
+	}
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: url(../img/cloud.jpg) repeat-x #049EC4;
+	background-position: 0px bottom;
+	-webkit-animation: animate-cloud 20s linear infinite;
+	-moz-animation: animate-cloud 20s linear infinite;
+	-ms-animation: animate-cloud 20s linear infinite;
+	animation: animate-cloud 20s linear infinite;
+}
+
+
+/*表单*/
+
+form {
+	/* position:absolute;
+ top: 50%;
+ left: 50%; */
+	margin: 120px auto;
+	width: 400px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	height: 300px;
+}
+
+form h1 {
+	padding-top: 20px;
+}
+
+form input {
+	display: block;
+	border: 1px solid #049EC4;
+	border-radius: 5px;
+	margin: 20px auto;
+	width: 250px;
+	padding: 10px;
+}
+
+form input[type='submit'] {
+	background-color: #4A77D4;
+	color: #fff;
+	width: 270px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+form input[type='submit']:active {
+	background-color: cadetblue;
+}

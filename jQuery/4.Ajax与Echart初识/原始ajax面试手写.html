@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>原始ajax</title>
+		<script type="text/javascript">
+			window.onload = function() {
+					document.getElementById("btn1").onclick = function() {
+						//1.创建XmlHttpRequest对象
+						if(window.XMLHttpRequest) {
+							//ie7以上，火狐，谷歌、苹果 欧朋
+							var oAjax = new XMLHttpRequest();
+
+						} else {
+							//ie6及以下
+							var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+							//2.对发送请求进行初始化，调用open方法
+							//open("请求方式"，"请求地址"，"同步异步")
+							oAjax.open("GET", "js/ddd.txt")
+							//3.发送请求
+							oAjax.send();
+							//4.对XmlHttpRequest添加onreadystatechange事件
+							/*
+							 *服务器信息返回过来的时候调用
+							 */
+							oAjax.onreadystatechange = function() {
+								//onreadystatechange与服务期发生交互时，调用此事件
+								//通过状态码确认服务器是否发送数据
+								//readystate代表交互进行的进度
+								/*
+								 *0:初始化
+								 * 1：服务器已建立连接,执行过open()
+								 * 2：请求已接收，执行过send()
+								 * 3：请求处理中
+								 * 4：请求完成，响应就绪
+								 */
+								//5.判断是否发送完成
+
+								if(oAjax.readyState == 4) {
+									//6.判断是否响应完成
+
+									if(oAjax.status == 200) {
+										//7.打印响应内容
+										alert("请求响应成功:" + oAjax.responseText);
+									} else {
+										alert("请求失敗:");
+									}
+								}
+							}
+						}
+
+					}
+		</script>
+	</head>
+
+	<body>
+		<button id="btn1">提交</button>
+	</body>
+
+</html>

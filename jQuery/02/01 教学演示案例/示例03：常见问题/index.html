@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>常见问题</title>
+		<link rel="stylesheet" href="css/problem.css">
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			/*
+						    	 
+						    	 * 1.text()相当于js里的innerText，只支持纯文本，不支持html标签。
+						    	 * 不仅能添加文本，还可以获取元素所含的文本。
+						    	 * 
+						    	 * 2.html()相当于js里的innerHtml。支持HTML标签。
+						    	 * 不仅能添加文本，还可以获取元素所含的文本和Html结构。
+						    	 * */
+
+			//hgroup：标签分组，括起多个h1标签
+			//如果连着使用多个h标签，如<h2></h2><h3></h3>...这种情况使用<hgroup>括起来
+			$(function() {
+				//获取h1标签添加点击事件
+				$("h1").click(function() {
+					var str = "<ul><li> 贝克汉姆：衷心希望北京能够申办成功！</li><li> 姚明：北京申冬奥是个非常棒的机会！加油！</li><li> 张虹：北京办冬奥，大家的热情定超乎想象！ </li><li> 肖恩怀特：我爱北京，支持北京申办冬奥会！</li><li> 赵宏博：北京申办冬奥会是再合适不过了！</li><li> 你喜欢哪些冬季运动项目？(点击进入调查页)</li></ul>"
+								//$("div.proList").text(str);
+
+					$("div.proList").html(str);
+				});
+				//获取h1标签添加点击事件
+				//1.隐藏文本 2.清空div
+				$("span").click(function() {
+					$("div.proList").html("");
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<section>
+			<span>×</span>
+			<h1>常见问题</h1>
+			<div class="proList"></div>
+			<div class="img"><img src="images/boy.png"></div>
+		</section>
+		<script src="js/jquery-1.12.4.js"></script>
+		<script>
+		</script>
+	</body>
+
+</html>

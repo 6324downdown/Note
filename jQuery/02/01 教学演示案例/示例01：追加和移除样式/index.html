@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+<title>追加和移除样式</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+<script type="text/javascript">
+	/*
+	 
+	 * 样式操作：
+	 * 1.css("样式属性名","样式属性值"):单独设置一个样式
+	 * css({"样式属性名1":"样式属性值1","样式属性名2":"样式属性值2"})同时设置多个样式
+	 * 
+	 * 2.addClass("class属性值1 class属性值2")追加样式
+	 * 3.removeClass("class属性值1 class属性值2")移除样式
+	 * 
+	 * */
+	$(function  () {
+		//1.获取h2标签，给h2标签添加鼠标移入事件
+		$("h2.title").mousemove(function  () {//移入事件
+			$("p.text").addClass("content border");
+		})
+				//1.获取h2标签，给h2标签添加鼠标移出事件
+		$("h2.title").mouseout(function  () {//移入事件
+			$("p.text").removeClass("content border");
+		})
+	})
+</script>
+<style type="text/css" >
+*{
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	font-family:"微软雅黑";
+	line-height: 28px;;
+}
+.title {font-size:14px; color:#03F; text-align: center; }
+.text{ padding:10px;}
+.content {background-color:#FFFF00; }
+.border {border:1px dashed #333; }
+</style>
+
+</head>
+<body>
+
+ <h2 class="title" >jQuery操作CSS</h2>
+ <p class="text">
+	 css()设置或返回样式属性<br>
+	 addClass()增加一个或多个类<br>
+	 removeClass()移除一个或多个类
+ </p>
+ <script src="js/jquery-1.12.4.js" ></script>
+ 
+</body>
+</html>

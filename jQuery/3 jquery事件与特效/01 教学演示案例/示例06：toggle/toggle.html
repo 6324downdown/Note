@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>toggle</title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script>
+			$(function() {
+				/*
+				 *toggle(fun1，fun2。。。。。。):复合事件，可以随着点击执行方法，切换元素的显示状态
+				 * 形式也可以为toggle(速度，回调函数)
+				 * 
+				 * 元素可见就改为隐藏，元素隐藏就改为可见
+				 * 
+				 */
+				//获取按钮
+				$("#btnShow").click(function  () {
+					$("h3").slideToggle()();
+				});
+				
+			})
+		</script>
+
+	</head>
+
+	<body>
+
+		<h3>toggle方法</h3>
+		<button id="btnShow">显示\隐藏</button>
+
+	</body>
+
+</html>

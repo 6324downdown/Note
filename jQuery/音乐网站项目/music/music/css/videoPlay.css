@@ -1,0 +1,301 @@
+.container .title {
+	font-size: 16px;
+	color: #9FABBA;
+	border: 1px solid #F3F3F3;
+	height: 40px;
+	border-radius: 4px;
+	line-height: 40px;
+	margin-top: 30px;
+}
+
+.container .title li {
+	float: left;
+	margin-left: 10px;
+}
+
+.container .title a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/*视频详情*/
+
+.container .content {
+	margin: 30px 0px;
+	overflow: hidden;
+}
+
+.container .content .img {
+	width: 30%;
+	float: left;
+}
+
+.container .content .introduce {
+	width: 70%;
+	float: left;
+}
+
+.container .content .span1 {
+	font-weight: 400;
+}
+
+.container .content .span2 {
+	font-size: 12px;
+	color: #888888;
+	margin-left: 10px;
+}
+
+.container .content .span3 {
+	font-size: 20px;
+	color: red;
+	margin-left: 10px;
+}
+
+.container .content p {
+	font-size: 16px;
+	color: #888888;
+}
+
+.container .content p a {
+	text-decoration: none;
+}
+
+.container .content p .span4 {
+	margin-left: 20px;
+}
+
+.container .content .button-price {
+	margin-top: 110px;
+	width: 150px;
+	height: 60px;
+	background-color: #3385FF;
+	line-height: 60px;
+	font-size: 18px;
+	border-radius: 30px;
+	transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-moz-transition: all 500ms;
+	-ms-transition: all 500ms;
+}
+
+.container .content .button-price:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.container .content .button-price span {
+	display: block;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+/*视频播放*/
+
+.dialog {
+	/*根据浏览器窗口定位*/
+	position: fixed;
+	/*上下左右：0，可以使弹出的窗口沾满整个屏幕*/
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/*设置元素是否不可见，默认是可见的*/
+	visibility: hidden;
+	z-index: 99;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/*当我点击按钮，视频可见*/
+
+.dialog.open {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/*设置视频居中*/
+
+.dialog .dialog-body video {
+	position: absolute;
+	width: 1280px;
+	height: 720px;
+	left: 50%;
+	top: 50%;
+	margin: -350px 0 0 -640px;
+	border-radius: 5px;
+}
+
+
+/*设置图标样式*/
+
+.dialog .close {
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #000;
+	font-size: 50px;
+	font-weight: 100;
+	line-height: 260px;
+	z-index: 2;
+	top: -100px;
+	left: -100px;
+	text-indent: 110px;
+	cursor: pointer;
+	transform: translateX(-100px);
+	-webkit-transform: translateX(-100px);
+	transition: 1s 300ms;
+	-webkit-transition: 1s 300ms;
+}
+
+.dialog .close {
+	transform: translateX(0);
+	-webkit-transform: translateX(0);
+}
+
+
+/*热播视频*/
+
+.container .video_list {
+	margin-top: 30px;
+	border: 1px solid #F3F3F3;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+h4.hot {
+	border-left: 5px solid #ff8d1b;
+	font-size: 24px;
+	color: #212121;
+	font-weight: 400;
+	margin-left: 42px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+
+.container .video_list ul {
+	height: 320px;
+	margin: 30px 0px;
+}
+
+.container .video_list ul li>a {
+	display: block;
+	width: 182px;
+	float: left;
+	margin-left: 42px;
+	background-color: white;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 12px;
+	color: #000000;
+}
+
+.container .video_list ul li p {
+	padding: 0px 5px 0px 5px;
+}
+
+.container .video_list ul li a span {
+	color: red;
+	font-weight: bold;
+	float: right;
+}
+
+.container .video_list ul li a:hover {
+	color: blue;
+	/*box-shadow: x轴 y轴 模糊值（可写可不写）阴影的延伸面积
+（可加可不加） 阴影颜色（可加可不加）;*/
+	box-shadow: 5px 5px 1px 10px white;
+}
+
+.container .comment {
+	margin: 30px 0px;
+	border: 1px solid #F3F3F3;
+	border-radius: 10px;
+}
+
+
+/*评论*/
+
+.comment .default {
+	margin-left: 42px;
+}
+
+.comment .hot span {
+	font-size: 12px;
+	color: #888888;
+	margin-left: 5px;
+}
+
+.comment form {
+	width: 80%;
+	height: 200px;
+}
+
+#c_hot {
+	width: 95%;
+	height: 100px;
+}
+
+.comment .c_btn {
+	margin-top: 20px;
+	width: 150px;
+	height: 40px;
+	background-color: dodgerblue;
+	line-height: 40px;
+	font-size: 16px;
+	border-radius: 5px;
+	float: right;
+}
+
+.container .comment .c_btn a {
+	display: block;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+.comment .cont {
+	width: 80%;
+	border-bottom: 1px solid #F3F3F3;
+	margin-top: 30px;
+}
+
+.comment .cont img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: left;
+}
+
+.comment .cont p {
+	font-size: 16px;
+	margin-left: 62px;
+}
+
+.comment .cont .p1 {
+	color: #888888;
+}
+
+.comment .more {
+	height: 36px;
+	background-color: #F3F3F3;
+	margin: 30px 30px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 36px;
+}
+
+.comment .more a {
+	color: #888888;
+	text-decoration: none;
+}

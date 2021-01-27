@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			jQuery是js的一个库，主要封装DOM操作。
+			jQuery写得少，做的多。
+			语法：$()
+		-->
+		<!--
+			1.导入jQuery库
+			不要将代码放在有src的script标签内部
+		-->
+		<script type="text/javascript" src="2.课上案例/01 教学演示案例/2：基本选择器/js/jquery-1.12.4.js">
+		</script>
+
+		<!--文档加载事件：正常情况下，代码按顺序加载
+			             如果加了文档加载事件，先加载H5和CSS，后加载js脚本。
+		-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				alert("aaaaaaaaaaaa");
+
+			})
+/*------------------------------------面试重点--------------------------------------*/
+			/*    
+			 $(document).ready()与window.onload()的区别：
+            1.执行时间：
+            $(document).ready()在H5标签结构加载完成后即可执行
+            window.onload()在所有元素（包括图片，视频等）加载完后才会执行
+            2.執行次數：
+                          在定义了多个时，window.onload()仅执行第一个定义的。
+             $(document).ready()可以同时编写多个，同时执行。
+             3.简写方式：
+             window.onload()不能简写
+             $(document).ready（）可以简写为$(function(){
+             	
+             });
+            */
+/*------------------------------------面试重点--------------------------------------*/
+
+			Window.onload = function() {
+				alert("1");
+			}
+			Window.onload = function() {
+				alert("2");
+			}
+			$(document).ready(function() {
+				alert("aaaaaaaaaaaa");
+
+			})
+			$(document).ready(function() {
+				alert("bbbbbbbbbbbbbb");
+
+			})
+			
+			
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

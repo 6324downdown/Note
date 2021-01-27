@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>键盘事件</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			
+			fieldset {
+				width: 300px;
+				margin: 10px auto;
+			}
+			
+			dl {
+				clear: both;
+			}
+			
+			dt,
+			dd {
+				display: inline-block;
+				height: 35px;
+				line-height: 35px;
+				;
+			}
+			
+			dt {
+				width: 80px;
+				text-align: right;
+			}
+			
+			input[type="submit"] {
+				width: 60px;
+				text-align: center;
+				line-height: 25px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			/*
+			 *keydown():按下键盘时触发
+			 * keyup():键盘抬起时出发
+			 * keypress():按住键盘不放时触发
+			 */
+			$(function  () {
+							$("[type=password]").keyup(function() {
+				$("#events").append("keyup");
+			}).keydown(function(e) {
+				$("#events").append("keydown");
+			}).keypress(function() {
+				$("#events").append("keypress");
+			});
+			$(document).keydown(function(event) {
+				if(event.keyCode == "13") {
+					alert("确认要提交么？");
+				}
+			});
+			})
+
+		</script>
+	</head>
+
+	<body>
+		<fieldset>
+			<legend>会员登录</legend>
+			<dl>
+				<dt>用户名：</dt>
+				<dd><input id="userName" type="text" /></dd>
+			</dl>
+			<dl>
+				<dt>密码：</dt>
+				<dd><input id="password" type="password" /></dd>
+			</dl>
+			<dl>
+				<dt></dt>
+				<dd><input type="submit" value="登 录" /> </dd>
+			</dl>
+			<span id="events"></span>
+		</fieldset>
+
+	</body>
+
+</html>

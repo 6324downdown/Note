@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>仿冬奥列表内容</title>
+		<link rel="stylesheet" href="css/games.css">
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/*
+				 *clone()方法:复制节点
+			      1.clone为true时,复制节点的行为
+				  2.clone为false时,不复制节点的行为
+				    注意：clone会克隆id,使id重合
+				 *
+				 */
+				//设置样式
+				$(".contain :header").css({
+					"background-color": "#2a65ba",
+					"color": "#ffffff"
+				});
+				$("li:eq(1)").css({
+					"border": "1px solid #808080",
+					"color": "#e90202"
+				});
+				$("li:lt(2)").css("color", "blue");
+
+				$("li:gt(3)").css("color", "blue");
+				$("li:first").css({
+					"font-size": "10px",
+					"color": "#e90202"
+				});
+				$("li:last").css({
+					"font-size": "10px",
+					"color": "chocolate"
+				});
+				$("li:odd").css("background-color", "#f0f0f0");
+				$("li:even").css("background-color", "#cccccc");
+				//给第一个li添加点击事件，点击完成复制
+				
+				
+				//使用clone()方法复制节点
+				$("li:first-child").click(function() {
+					//1.clone为true时,复制节点的行为
+					//    $(this).clone(true).appendTo("ul");
+					//2.clone为false时,不复制节点的行为
+					$(this).clone(false).appendTo("ul");
+					//注意：clone会克隆id,使id重合
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="contain">
+			<h2>祝福冬奥</h2>
+			<ul class="gameList">
+				<li> 贝克汉姆：衷心希望北京能够申办成功！</li>
+				<li> 姚明：北京申冬奥是个非常棒的机会！加油！</li>
+				<li> 张虹：北京办冬奥，大家的热情定超乎想象！ </li>
+				<li> 肖恩怀特：我爱北京，支持北京申办冬奥会！</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>

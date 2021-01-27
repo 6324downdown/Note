@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>QQ简易聊天框</title>
+		<link rel="stylesheet" href="css/chat.css">
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script>
+			var names = ["时尚伊人", "六月奇迹", "松松"];
+			var imgs = ["images/head01.jpg", "images/head02.jpg", "images/head03.jpg"];
+			$(function() {
+				$("#send").click(function() {
+					if($(".chatText").val().length != 0) {
+						var iNum = Math.floor(Math.random() * 3); //取随机数
+						var txt = $(".chatText").val();
+						$(".chatBody").append("<div><img  src='" + imgs[iNum] + "'/>" + names[iNum] + "<br/><div>" + txt + "</div></div>");
+						$(".chatText").val("");
+						$(".chatBody>div>img").css("float", "left");
+						$(".chatBody>div").css("color", "blue");
+						$(".chatBody>div>div").addClass("a");
+					}
+/*
+ 
+ * h5几个好用的语义标签：
+ * <header>:网页头部
+ * <nav>:导航栏，代替div对搜索引擎更友好
+ * <footer>:网页尾部
+ * <article>:文章
+ * <hgroup>:使用多个h1时使用
+ * <section>:代表独立的未被引用的块
+ * <aside>：侧边栏
+ * 
+ * */
+				});
+			})
+		</script>
+		<style type="text/css">
+			.a {
+				color: black;
+				background-color: darkgray;
+				border-radius: 3px;
+				margin-left: 35px;
+				width: 90%;
+				word-break: break-all;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section id="chat">
+			<div class="chatBody"></div>
+			<div><img src="images/icon.jpg"></div>
+			<textarea class="chatText"></textarea>
+			<div class="btn"><span>关闭(C)</span><span id="send">发送(S)</span></div>
+		</section>
+	</body>
+
+</html>

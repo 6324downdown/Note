@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>论坛列表</title>
+		<link href="css/bbs.css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script>
+			var imgs = ["images/tou01.jpg", "images/tou02.jpg", "images/tou03.jpg", "images/tou04.jpg"]
+			$(function() {
+				$(function() {
+					$("span,header").click(function() {
+						$(".post").show();
+					});
+					$(".btn").click(function() {
+						if($("select").val() == "请选择版块") {
+							alert("请选择有效板块！");
+						} else if($(".title").val().length==0) {
+							alert("请输入标题！");
+						}
+						else if($(".content").val().length==0) {
+							alert("内容不能为空！");
+						}else {
+							var iNum = Math.floor(Math.random() * 3);
+							var $title = $(".title").val();
+							var $content = $(".content").val();
+							var $select = "板块:" + $("select").val();
+							var now = new Date();
+							var $time = "发表时间:" + now.getFullYear() + "-" + now.getMonth() + 1 + "-" + now.getDate() + "-  " + now.getHours() + ":" + now.getMinutes();
+							$(".title").val("");
+							$(".content").val("");
+							$("select").val("");
+
+							$("ul").append("<div> <img src=" + $imgs[iNum] + "/>" + $title + "<span>" + $select + "   " + $time + "</span> </div>");
+							$("ul>img").addClass("imgLeft")
+							$(".post").hide();
+						}
+
+					})
+				});
+			})
+		</script>
+		<style type="text/css">
+			.imgLeft {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bbs">
+			<header><span>我要发帖</span></header>
+			<section>
+				<ul></ul>
+			</section>
+			<div class="post">
+				<input class="title" placeholder="请输入标题（1-50个字符）"> 所属版块：
+				<select>
+					<option>请选择版块</option>
+					<option>电子书籍</option>
+					<option>新课来了</option>
+					<option>新手报到</option>
+					<option>职业规划</option>
+				</select>
+				<textarea class="content"></textarea>
+				<input class="btn" value="发布">
+			</div>
+		</div>
+
+	</body>
+
+</html>
